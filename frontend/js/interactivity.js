@@ -16,6 +16,7 @@ function newNoteTrigger(e) {
 window.onload = async function () {
     onPageLoaded();
     document.body.addEventListener("mouseup", dragEnd);
+    document.body.addEventListener("mouseleave", dragEnd);
     document.body.addEventListener("mousedown", function(e) {
         var dragBackground = !isChildOfClass("note", e.target)
         if (!dragBackground) return;

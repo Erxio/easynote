@@ -141,27 +141,11 @@ app.get("/api/boards", async (req, res) => {
     res.send(await PGA.get_root_boards("admin@flexnote"));
 })
 app.get("/api/:boardId", async (req, res) => {
-    // var data = db.get("boards").filter({id: req.params.boardId}).value();
-    // if (data.length == 0/* && req.params.boardId == "root"*/){
-    //     data = {title: "New Board", notes:[], links:[], lists:[], id:req.params.boardId};
-    //     db.get("boards").push(data).write()
-    // }
-    // res.send(data[0])
     res.send(await PGA.get_board(req.user, req.params.boardId))
 })
 app.get("/api/:boardId/previous", async (req, res) => {
     var data = await PGA.get_predecessor_board(req.params.boardId);
     res.send(data);
-    // var boards = db.get("boards").filter({}).value();
-    // boards.forEach(element => {
-    //     if (element.notes){
-    //         var notes = element.notes.filter(n => n.id == req.params.boardId) 
-    //         if (notes.length == 1){
-    //             res.send({id: notes[0].from})
-    //             return;
-    //         }
-    //     }
-    // });
 })
 app.post("/api/:boardId/update", async (req, res) => {
     await PGA.update_board(req.user, req.params.boardId, req.body);
@@ -169,33 +153,16 @@ app.post("/api/:boardId/update", async (req, res) => {
 })
 
 app.post("/api/:boardId/notes/add", async (req, res) => {
-    // var board = db.get("boards").find({id: req.params.boardId}).value();
-    // board.notes.push(req.body);
-    // db.get("boards").find({id: req.params.boardId}).assign({notes: board.notes}).write();
     await PGA.add_note(req.user, req.params.boardId, req.body);
 
     res.send("ok");
 })
 app.post("/api/:boardId/notes/update/:noteId", async (req, res) => {
-    // var board = db.get("boards").find({id: req.params.boardId}).value();
-    // for(var i = 0; i < board.notes.length; i++){
-    //     var note = board.notes[i];
-    //     if (req.body.id == note.id){
-    //         board.notes[i] = req.body;
-    //         break;
-    //     }
-    // }
-    // db.get("boards").find({id: req.params.boardId}).assign({notes: board.notes}).write();
     await PGA.update_note(req.user, req.body);
 
     res.send("ok");
 })
 app.get("/api/:boardId/notes/remove/:noteId", async (req, res) => {
-    // var board = db.get("boards").find({id: req.params.boardId}).value();
-    // // console.log(board.notes.map(e => e.id))
-    // // console.log(board.notes.map(e => e.id).indexOf(req.params.noteId))
-    // board.notes.splice(board.notes.map(e => e.id).indexOf(req.params.noteId),1)
-    // db.get("boards").find({id: req.params.boardId}).assign({notes: board.notes}).write();
     await PGA.remove_note(req.user, req.params.noteId);
 
     res.send(req.params.boardId);

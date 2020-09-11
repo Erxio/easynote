@@ -2,7 +2,7 @@
 module.exports = class PgAdapter {
     constructor() {
         /* Postgre SQL */
-        const pg = require("pg")
+        const pg = require("pg");
         this.pool = new pg.Pool({
             user: "postgres",
             host: "localhost",
