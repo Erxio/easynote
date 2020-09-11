@@ -1,0 +1,82 @@
+// Colors
+$bg-color: #fff;
+$dot-color: #aaa;
+
+// Dimensions
+$dot-size: 2px;
+$dot-space: 20px;
+
+body {
+    user-select: none;
+    margin: 0px;
+    padding: 0px;
+    min-width: 100vw;
+    min-height: 100vh;
+    font-family: 'Nunito', sans-serif;
+    background-color: white;
+	background:
+		linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
+		linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+		$dot-color;
+    background-size: $dot-space $dot-space;
+    overflow: hidden;
+    cursor: move;
+}
+
+.bin {
+    display: none;
+}
+
+#actionbar {
+    position: fixed;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    background-color: whitesmoke;
+    height: 64px;
+    z-index: 9001;
+
+    button {
+        min-width: 60px;
+        height: 60px;
+        margin: 2px;
+        border-style: none;
+        background-color: #2c7873;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    input {
+        height: 56px;
+        border-style: none;
+        background-color: transparent;
+        font-weight: bold;
+        font-size: 32px;
+        vertical-align: middle;
+        margin: auto;
+    }
+}
+
+#corner{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 500px;
+    height: 500px;
+transform: translate(-250px, -250px);
+}
+
+#path {
+    background-color: gray;
+    width: 256px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 9996999;
+    display: none;
+}

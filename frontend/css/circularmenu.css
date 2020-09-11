@@ -1,0 +1,62 @@
+#circularmenu {
+  position: absolute;
+  display: none;
+  top: 400px;
+  left: 500px;
+  z-index: 100;
+}
+
+#circularmenu > .close {
+  position: absolute;
+  text-align: center;
+  line-height: 52px;
+  width: 52px;
+  height: 52px;
+  border-radius: 52px;
+  left: -26px;
+  top: -26px;
+  background-color: lightgray;
+  -webkit-transition: background-color 200ms, -webkit-transform 200ms;
+  transition: background-color 200ms, -webkit-transform 200ms;
+  transition: transform 200ms, background-color 200ms;
+  transition: transform 200ms, background-color 200ms, -webkit-transform 200ms;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#circularmenu .close:hover {
+  background-color: #ee4540;
+  color: white;
+}
+
+#circularmenu .action {
+  position: absolute;
+  background-color: lightgray;
+  text-align: center;
+  line-height: 52px;
+  width: 52px;
+  height: 52px;
+  border-radius: 52px;
+  left: -26px;
+  top: -26px;
+  -webkit-transition: background-color 200ms, -webkit-transform 200ms;
+  transition: background-color 200ms, -webkit-transform 200ms;
+  transition: transform 200ms, background-color 200ms;
+  transition: transform 200ms, background-color 200ms, -webkit-transform 200ms;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#circularmenu .action:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: #4d80e4;
+  color: white;
+}
+/*# sourceMappingURL=circularmenu.css.map */

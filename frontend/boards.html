@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/note.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/circularmenu.css">
+    <script src="js/helpers.js"></script>
+    <title>EasyNote</title>
+</head>
+
+<body>
+    <div id="actionbar">
+        <button id="btn_home">Home</button>
+        <script>{
+            Q("#btn_home").addEventListener("click", () => {
+                window.location = "index.html"
+            })
+        }</script>
+        <button style="opacity: 0; pointer-events: none;" id="btn_back">$lastboard</button>
+        <input id="boardtitle" value="">
+    </div>
+    <div id="container"></div>
+    <div id="corner"></div>
+    <div class="backdrop"></div>
+    <div class="modalcontainer">
+        <div class="modal" target="colorpicker">
+            <div class="title">
+                Pick a color
+            </div>
+            <div class="content grid">
+            </div>
+        </div>
+    </div>
+    <div class="toaster"></div>
+    <div class="bin"></div>
+    <div id="circularmenu">
+        <div class="actions">
+
+        </div>
+        <div class="close">✕</div>
+    </div>
+</body>
+
+</html>
+<script src="js/axios.min.js"></script>
+<script>
+    axios.defaults.headers.common['Authorization'] = window.localStorage.getItem("token");
+    axios.interceptors.response.use(function (response) {
+        return response;
+    }, function (error) {
+        // Do something with response error
+        console.log("fail");
+        window.location = "login.html"
+        return Promise.reject(error);
+    });
+</script>
+<script src="js/com.js"></script>
+<script src="js/structs.js"></script>
+<script src="js/interactivity.js"></script>
+<script>getPreviousBoard()</script>

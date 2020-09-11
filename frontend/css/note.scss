@@ -1,0 +1,139 @@
+.note {
+    width: 300px;
+    background-color: whitesmoke; //////
+    padding: 36px 12px 12px 12px;
+    border-width: 2px 2px 6px 2px;
+    border-style: solid;
+    border-color: #0000ff;
+    transform: scale(1);
+
+    animation-name: note_fadein;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-duration: 200ms;
+
+    // border-radius: 8px;
+    box-shadow: 0px 3px 3px rgba(0,0,0,.3);
+}
+@keyframes note_fadein {
+    0% {
+        transform: scale(0.6);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+// .note:hover {
+//     z-index: 50;
+// }
+.board {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    cursor: grab;
+    user-select: none;
+}
+.board.grabbed {
+    cursor: grabbing;
+}
+
+.note > .media {
+    width: 100%;
+}
+
+.note > .title {
+    font-weight: bold;
+    opacity: .5;
+    margin: 4px 0;
+    cursor: text;
+    color: black;
+}
+.note.link{
+    width: 150px;
+    height: 70px;
+    text-align: center;
+}
+.note.link > input{
+    text-align: center;
+}
+.note.link > .action.b{
+    box-shadow: 0px 0px 4px black;
+}
+
+.note > .url {
+    font-style: italic;
+    word-break: break-all;
+    font-size: .7em;
+    cursor: text;
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    padding: 8px;
+    box-sizing: border-box;
+    top: calc(100% + 6px);
+    left: 0; 
+    border-radius: 8px;
+    color: white;
+    opacity: 0;
+    transition: opacity 200ms;
+    user-select: text ;
+    z-index: 500;
+}
+.note:hover > .url {
+    opacity: 1;
+}
+
+.note > .text {
+    color: black;
+    margin: 4px 0;
+    cursor: text;
+}
+
+.note > input, .note > textarea {
+    margin: 4px 0;
+    width: 100%;
+    background-color: transparent;
+    border-style: none;
+    resize: none;
+    font-family: inherit; 
+    font-size: inherit;
+    padding: 0;
+}
+.note > input {
+    font-weight: bold;
+    opacity: .8;
+}
+.note > .action {
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 24px ;
+    line-height: 20px;
+    text-align: center;
+    
+    box-sizing: border-box;
+    transform: scale(0);
+    transition: transform 300ms, background-color 500ms, filter 300ms;
+    cursor: pointer;
+}
+
+.note > .action.a {
+    background-color: rgba(245,245,245,.5);
+    color: black;
+    transition-delay: 0ms;
+    right: calc(1 * (5px));
+}
+.note > .action.b {
+    transition-delay: 75ms;
+    background-color: whitesmoke;
+    right: calc(2 * 5px + 1 * 24px);
+}
+
+.note:hover > .action {
+    transform: scale(1);
+}
+.note:hover > .action:hover {
+    transform: scale(1.3);
+}

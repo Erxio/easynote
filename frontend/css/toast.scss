@@ -1,0 +1,46 @@
+.toaster {
+    display: none;
+    position: absolute;
+    right: 5px; //calc(50vw - 250px);
+    bottom: 0;
+
+    // display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.toast {
+    width: 500px;
+    padding: 16px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: whitesmoke;
+    margin: 8px 0;
+    animation-name: spawn;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    opacity: 1;
+}
+
+@keyframes spawn {
+    0%      {opacity: 0;}
+    100%    {opacity: 1;}
+}
+@keyframes hide {
+    0%      {opacity: 1;}
+    100%    {
+        opacity: 0;
+        transform: translateX(250px);
+    }
+}
+
+.toast.hide {
+    animation-name: hide;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    opacity: 1; 
+}

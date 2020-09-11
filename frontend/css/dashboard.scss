@@ -1,0 +1,85 @@
+.dashboard {
+    font: 1em sans-serif;
+    background-image: url("../bg-2.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 0; margin: 0;
+
+    #header {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        width: 705px;
+        height: 66px;
+
+        #left {
+            width: 100px;
+            height: 50px;
+            background-color: #393e46aa;
+            color: white;
+            box-shadow: 0px 4px 4px rgba(0,0,0,.5);
+            backdrop-filter: blur(6px);
+            margin-right: 16px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            user-select: none;
+            cursor: pointer;
+        }
+        #right{
+            justify-content: right;
+            width: calc(605px - 16px);
+            height: 100px;
+            background-color: #ffffffaa;
+            box-shadow: 0px 4px 4px rgba(0,0,0,.5);
+            backdrop-filter: blur(6px);
+        }
+    }
+    #overview {
+        height: calc(150px * 4 + 16px * 5);
+        display: grid;
+        grid-template-columns:  repeat(4, 150px);
+        grid-auto-rows: 150px; 
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+        padding: 20px;
+        overflow-y: scroll;
+        box-sizing: border-box;
+        align-items: stretch;
+        background-color: #ffffffaa;
+        box-shadow: 0px 4px 4px rgba(0,0,0,.5);
+        backdrop-filter: blur(6px);
+        padding-bottom: 16px;
+    }
+    .board{
+        width: 150px;
+        height: 150px;
+        border-radius: 16px;
+        background-image: linear-gradient(to right bottom, #3a3535, #343030, #2e2a2a, #292525, #232020);
+        color: white;
+        vertical-align: middle;
+        box-sizing: border-box;
+        padding: 8px;
+        text-align: center;
+        transition: transform .2s, filter .2s, box-shadow .2s;
+        cursor: pointer;
+        box-shadow: 0px 0px 0px transparent;
+    }
+    .board#new {
+        padding: 0;
+        font-size: 78px;
+        line-height: 150px;
+        background-image: linear-gradient(to right bottom, #c0ffb3, #a9f7aa, #90efa2, #74e69c, #52de97);
+        cursor: pointer;
+    }
+    .board:hover {
+        filter: brightness(105%);
+        transform: translateY(-3px);
+        box-shadow: 0px 3px 8px rgba(0,0,0,.4);
+    }
+}

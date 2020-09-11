@@ -1,0 +1,100 @@
+.login {
+  font-family: 'Nunito', sans-serif;
+  background-image: url("../bg-1.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login .card {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  background-color: #ffffffaa;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 16px;
+}
+
+.login .card h1 {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.login .card form {
+  width: 100%;
+}
+
+.login .card form #btn_login {
+  margin-left: auto;
+  background-color: #2c7873;
+}
+
+.login .card form button {
+  background-color: #393e46;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+.login .card form button:hover {
+  opacity: .8;
+}
+
+.login .card .input {
+  position: relative;
+  height: 32px;
+  width: 100%;
+  margin: 64px 0;
+}
+
+.login .card .input input {
+  width: 100%;
+  padding: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.login .card .input label {
+  position: absolute;
+  font-weight: bold;
+  opacity: .8;
+  top: -20px;
+  left: 0;
+}
+
+.login .card.big {
+  width: 600px;
+  height: 800px;
+}
+/*# sourceMappingURL=login.css.map */

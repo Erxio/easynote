@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    var token = window.localStorage.getItem("token")
+    if (token == ""){ //if not logged in
+        window.location = "login.html"
+    }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/dashboard.css" rel="stylesheet" type="text/css">
+    <script src="js/axios.min.js"></script>
+    <script src="js/helpers.js"></script>
+    <title>Easy Note - Dashboard</title>
+</head>
+<script>
+axios.defaults.headers.common['Authorization'] = window.localStorage.getItem("token");
+axios.interceptors.response.use(function (response) {
+    return response;
+}, function (error) {
+    // Do something with response error
+    console.log("fail");
+    window.location = "login.html"
+    return Promise.reject(error);
+});
+</script>
+<script>
+function newBoard(){
+    window.location = "boards.html?"+uuid();
+}
+function openBoard(target){
+    // console.log(target.getAttribute("board"));
+    window.location = "boards.html?"+target.getAttribute("board");
+}
+axios.get("http://localhost:3000/api/boards").then(res => {
+    console.log(res.data);
+    res.data.forEach(element => {
+        var board = E("div", element.title, ["board"])
+        board.setAttribute("board", element.id);
+        board.addEventListener("click", () => {
+            openBoard(board);
+        })
+        Q("#overview").appendChild(board);
+    });
+})
+function logout(){
+    window.location = "login.html"
+}
+</script>
+<body class="dashboard">
+    <div id="header">
+        <div id="left" onclick="logout()">Logout</div>
+        <!-- <div id="right">Right</div> -->
+    </div>
+    <div id="overview">
+        <div id="new" class="board" onclick="newBoard()">+</div>
+        <!-- <div class="board" board="0089a688-1aba-4628-9a4c-336ea437b2d4" onclick="openBoard(this)">New Board with a name</div> -->
+
+    </div>
+</body>
+</html>
+
+<!-- Photo by Essentialiving on Unsplash -->
+
+<!-- ccd3ecc2-dde7-4784-a3c6-da8f423bccb6 -->

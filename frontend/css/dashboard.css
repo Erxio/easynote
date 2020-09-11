@@ -1,0 +1,133 @@
+.dashboard {
+  font: 1em sans-serif;
+  background-image: url("../bg-2.jpg");
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard #header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 705px;
+  height: 66px;
+}
+
+.dashboard #header #left {
+  width: 100px;
+  height: 50px;
+  background-color: #393e46aa;
+  color: white;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  margin-right: 16px;
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.dashboard #header #right {
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  width: calc(605px - 16px);
+  height: 100px;
+  background-color: #ffffffaa;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+}
+
+.dashboard #overview {
+  height: calc(150px * 4 + 16px * 5);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (150px)[4];
+      grid-template-columns: repeat(4, 150px);
+  grid-auto-rows: 150px;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  padding: 20px;
+  overflow-y: scroll;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  background-color: #ffffffaa;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  padding-bottom: 16px;
+}
+
+.dashboard .board {
+  width: 150px;
+  height: 150px;
+  border-radius: 16px;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#3a3535), color-stop(#343030), color-stop(#2e2a2a), color-stop(#292525), to(#232020));
+  background-image: linear-gradient(to right bottom, #3a3535, #343030, #2e2a2a, #292525, #232020);
+  color: white;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 8px;
+  text-align: center;
+  -webkit-transition: -webkit-transform .2s, -webkit-filter .2s, -webkit-box-shadow .2s;
+  transition: -webkit-transform .2s, -webkit-filter .2s, -webkit-box-shadow .2s;
+  transition: transform .2s, filter .2s, box-shadow .2s;
+  transition: transform .2s, filter .2s, box-shadow .2s, -webkit-transform .2s, -webkit-filter .2s, -webkit-box-shadow .2s;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 0px transparent;
+          box-shadow: 0px 0px 0px transparent;
+}
+
+.dashboard .board#new {
+  padding: 0;
+  font-size: 78px;
+  line-height: 150px;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#c0ffb3), color-stop(#a9f7aa), color-stop(#90efa2), color-stop(#74e69c), to(#52de97));
+  background-image: linear-gradient(to right bottom, #c0ffb3, #a9f7aa, #90efa2, #74e69c, #52de97);
+  cursor: pointer;
+}
+
+.dashboard .board:hover {
+  -webkit-filter: brightness(105%);
+          filter: brightness(105%);
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
+}
+/*# sourceMappingURL=dashboard.css.map */
